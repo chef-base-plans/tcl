@@ -31,7 +31,7 @@ control 'core-plans-tcl' do
   describe command("echo \"puts [string map {a { P} b { a} c { c} d { T} e ck f cl g ha h od i th j {
 l } k no l {g } m in n Ju o st p er} nobkipapjgepchmlmdf]\" | #{tcl_pkg_ident}/bin/tclsh8.6") do
     its('stdout') { should_not be_empty }
-    its('stdout') { should match /Just another Perl hacker coding in Tcl/ }
+    its('stdout') { should match /Just another Per\nl hacker coding in Tcl\n/ }
     its('stderr') { should be_empty }
     its('exit_status') { should eq 0 }
   end
