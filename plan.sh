@@ -6,7 +6,7 @@ pkg_description="Tool Command Language -- A dynamic programming language."
 pkg_upstream_url="http://tcl.sourceforge.net/"
 pkg_license=('custom')
 pkg_source="http://downloads.sourceforge.net/sourceforge/${pkg_name}/${pkg_name}${pkg_version}-src.tar.gz"
-pkg_shasum="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+pkg_shasum="8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258"
 pkg_dirname="${pkg_name}${pkg_version}"
 pkg_deps=(
   core/glibc
