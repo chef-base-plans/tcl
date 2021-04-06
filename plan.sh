@@ -70,7 +70,7 @@ do_install() {
     make install-private-headers
 
     # Many packages expect a file named tclsh, so create a symlink
-    ln -sfv "tclsh${pkg_version%.?}" "$pkg_prefix/bin/tclsh"
+    ln -sfv "tclsh${pkg_version%.??}" "$pkg_prefix/bin/tclsh"
 
     chmod -v 755 "$pkg_prefix/lib/libtcl${pkg_version%.??}.so"
     ln -sfv "libtcl${pkg_version%.??}.so" "$pkg_prefix/lib/libtcl.so"
