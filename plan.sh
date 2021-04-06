@@ -44,8 +44,8 @@ do_build() {
     # Thanks to: https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/tcl
     local srcdir
     srcdir=$(abspath ..)
-    local tdbcver=tdbc1.1.0
-    local itclver=itcl4.1.2
+    local tdbcver=tdbc1.1.2
+    local itclver=itcl4.2.1
     sed \
       -e "s#$srcdir/unix#$pkg_prefix/lib#" \
       -e "s#$srcdir#$pkg_prefix/include#" \
@@ -72,8 +72,8 @@ do_install() {
     # Many packages expect a file named tclsh, so create a symlink
     ln -sfv "tclsh${pkg_version%.?}" "$pkg_prefix/bin/tclsh"
 
-    chmod -v 755 "$pkg_prefix/lib/libtcl${pkg_version%.?}.so"
-    ln -sfv "libtcl${pkg_version%.?}.so" "$pkg_prefix/lib/libtcl.so"
+    chmod -v 755 "$pkg_prefix/lib/libtcl${pkg_version%.??}.so"
+    ln -sfv "libtcl${pkg_version%.??}.so" "$pkg_prefix/lib/libtcl.so"
 
     # Install license file
     install -Dm644 ../license.terms "${pkg_prefix}/share/licenses/LICENSE"
